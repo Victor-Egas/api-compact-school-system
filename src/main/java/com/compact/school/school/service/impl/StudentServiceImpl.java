@@ -1,7 +1,7 @@
 package com.compact.school.school.service.impl;
 
-import com.compact.school.school.dao.StudentRepository;
-import com.compact.school.school.model.entity.Student;
+import com.compact.school.school.repository.MatriculaRepository;
+import com.compact.school.school.model.entity.Alumno;
 import com.compact.school.school.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +12,10 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    private StudentRepository studentRepository;
+    private MatriculaRepository studentRepository;
 
     @Override
-    public List<Student> findAllStudent() {
+    public List<Alumno> findAllStudent() {
         return studentRepository.findAllStudent();
     }
 }

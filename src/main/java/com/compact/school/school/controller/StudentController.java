@@ -1,6 +1,6 @@
 package com.compact.school.school.controller;
 
-import com.compact.school.school.model.entity.Student;
+import com.compact.school.school.model.entity.Alumno;
 import com.compact.school.school.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +19,8 @@ public class StudentController {
     private StudentService service;
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<Student>> findAllStudent(){
-        List<Student> studentList = service.findAllStudent();
+    public ResponseEntity<List<Alumno>> findAllStudent(){
+        List<Alumno> studentList = service.findAllStudent();
 
         return new ResponseEntity<>(studentList , HttpStatus.OK);
     }
