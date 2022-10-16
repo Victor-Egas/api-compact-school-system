@@ -1,33 +1,26 @@
-package com.compact.school.school.model.entity;
+package com.compact.school.school.model.api;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.compact.school.school.model.entity.Curso;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
-@Entity
-@Table(name = "tb_seccion")
-public class Seccion implements Serializable{
+public class SeccionDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idSeccion;
 
-    @Column(name = "nombreSeccion" , nullable = false)
     private String nombreSeccion;
 
-    @Column(name = "vacanteSeccion" , nullable = false)
     private Integer vacanteSeccion;
 
-    @Column(name = "estadoSeccion" , nullable = false)
     private Integer estadoSeccion;
 
-    @ManyToMany
-    @JoinTable(name="tb_seccion_curso"
-            , joinColumns = @JoinColumn(name = "idSeccion")
-            , inverseJoinColumns = @JoinColumn(name = "idCurso"))
     private List<Curso> cursos;
 
     public Integer getIdSeccion() {
@@ -62,4 +55,11 @@ public class Seccion implements Serializable{
         this.estadoSeccion = estadoSeccion;
     }
 
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
 }

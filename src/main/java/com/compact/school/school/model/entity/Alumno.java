@@ -15,7 +15,7 @@ public class Alumno {
     @Column(name = "apellidoAlumno", nullable = false, length = 40)
     private String apellidoAlumno;
 
-    @Column(name = "dniAlumno", nullable = false, length = 40)
+    @Column(name = "dniAlumno", nullable = false, length = 8)
     private String dniAlumno;
 
     @Column(name = "direccionAlumno", nullable = false, length = 50)
